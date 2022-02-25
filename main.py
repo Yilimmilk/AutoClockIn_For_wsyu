@@ -12,7 +12,7 @@ from database.database import SessionLocal
 from database.models import UserInfo
 from ConfigConst import *
 
-app = FastAPI(debug=True, docs_url="/docsss")
+app = FastAPI(debug=DEBUG, docs_url=DOCS_URL)
 
 
 def get_db():
@@ -84,7 +84,7 @@ async def check(request: Request, db: Session = Depends(get_db), username: str =
             write_log(f"({datetime.now().strftime('%H:%M:%S')})[{username}&{password}]打卡成功")
             return result
         if result['code'] == 400:
-            # 提交失败，将尝试重新提交，若重试次数超过三次则放弃，并写入日志
+            # 提交失败，并写入日志
             write_log(f"({datetime.now().strftime('%H:%M:%S')})[{username}&{password}]记录到一次失败，原因为[{result['msg']}]")
             write_exception_log(result)
             return result

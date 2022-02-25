@@ -13,10 +13,12 @@ URL_ADD_HEALTH_QUESTIONNAIRE = "/hltQstnr/addHltQstnr"
 URL_SELECT_HEALTH_QUESTIONNAIRE_ADDR = "/hltQstnr/selectHltQstnrAddress"
 
 # 设置相关
+DEBUG = True
+DOCS_URL = "/docsss"
 TIMEOUT = 5
 USER_AGENT = "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/98.0.4758.101 Mobile Safari/537.36 Language/zh_CN com.chaoxing.mobile/ChaoXingStudy_3_5.1.4_android_phone_614_74"
-LOCATION = "湖北省武汉市"
-HEALTH_FORM_STATE = "2,2,2,"
+DEFAULT_LOCATION = "湖北省武汉市"
+HEALTH_FORM_ANSWER = "2,2,2,"
 
 # 文案
 TEXT_MAX_TRIES = "已尝试三次登陆，均失败，遂放弃尝试，错误已写入日志。"

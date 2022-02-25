@@ -76,7 +76,7 @@ class ClockIn(object):
         ).json()
         return build_state(data)
 
-    def post_health_form(self, uuid: str, addr: str = '', ansr: str = HEALTH_FORM_STATE):
+    def post_health_form(self, uuid: str, addr: str = '', ansr: str = HEALTH_FORM_ANSWER):
         """
         发送疫情打卡表单
         :param uuid: UUID
@@ -91,7 +91,7 @@ class ClockIn(object):
             headers=self.headers,
             json={
                 'ansr': ansr,
-                'address': last_select_addr['data']['data'] if last_select_addr['code'] == 200 else LOCATION,
+                'address': last_select_addr['data']['data'] if last_select_addr['code'] == 200 else DEFAULT_LOCATION,
                 'uuid': uuid
             },
             timeout=TIMEOUT
